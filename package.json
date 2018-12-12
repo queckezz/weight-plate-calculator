@@ -5,8 +5,7 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest",
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
+    "now-build": "next build && next export -o dist",
     "build-svg": "pixo icons"
   },
   "dependencies": {
@@ -20,7 +19,7 @@
     "superbox": "^2.1.0"
   },
   "pixo": {
-    "outDir": "dist",
+    "outDir": "components/Icons",
     "template": "styledSystem",
     "index": true
   },

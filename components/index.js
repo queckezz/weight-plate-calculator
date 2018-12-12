@@ -4,7 +4,7 @@ export * from './Flex'
 export * from './Text'
 export * from './Position'
 export * from './SpaceChildren'
-export * from '../dist'
+export * from './Icons'
 
 export * from './LabeledBlock'
 export * from './Inputs'
