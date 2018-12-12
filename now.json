@@ -1,5 +1,6 @@
 {
   "version": 2,
   "name": "platecalc",
+  "alias": "platecalc.now.sh",
   "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }
