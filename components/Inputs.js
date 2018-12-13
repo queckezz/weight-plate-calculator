@@ -2,22 +2,28 @@ import styled from 'styled-components'
 import { borderColor, borders, themeGet } from 'styled-system'
 import { Flex, Text } from '../components'
 
+const widthBasedOnValue = ({ width, value, minSize }) => {
+  if (width) {
+    return { width }
+  }
+
+  const len = value.toString().length
+  const baseFactor = 28
+
+  return {
+    width: len < minSize ? minSize * baseFactor : len * baseFactor
+  }
+}
+
 export const BaseInput = styled(Text)(
-  ({ width, value, minSize }) => {
-    if (width) {
-      return { width }
-    }
+  widthBasedOnValue,
 
-    const len = value.toString().length
-    const baseFactor = 28
-
-    return {
-      width: len < minSize ? minSize * baseFactor : len * baseFactor
-    }
+  {
+    backgroundColor: 'transparent',
+    transition: 'border-color .2s'
   },
 
   props => ({
-    transition: 'border-color .2s',
     '&:focus': {
       outline: 'none',
       borderColor: themeGet('colors.grays.1')(props)
@@ -26,9 +32,7 @@ export const BaseInput = styled(Text)(
     '&::placeholder': {
       color: themeGet('colors.grays.11')(props)
     }
-  }),
-  borders,
-  borderColor
+  })
 )
 
 const validateKeyAsNumber = keyCode =>
