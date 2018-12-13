@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 import { Text, Box, Flex } from '.'
 
-const ContentLabel = styled(Text)({
-  textTransform: 'uppercase'
-})
-
-ContentLabel.defaultProps = {
-  fontFamily: 'primary',
-  fontSize: 0,
-  letterSpacing: '1px',
-  fontWeight: 'bold',
-  color: 'grays.7'
-}
+const ContentLabel = props => (
+  <Text
+    {...props}
+    fontFamily="primary"
+    fontSize={0}
+    letterSpacing="1px"
+    fontWeight="bold"
+    color="grays.7"
+    caps={true}
+  />
+)
 
 const Badge = styled(Text)({
   display: 'inline-block'

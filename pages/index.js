@@ -1,5 +1,5 @@
 import { AppShell, Calculator } from '../components'
-import { getPlates } from '../lib/get-plates'
+import { getPlates } from '../lib/plates'
 import { useReducer } from 'react'
 
 const createNumberInputState = localeValue => {
@@ -30,7 +30,7 @@ export default function App() {
     },
     {
       barbellWeight: createNumberInputState(20),
-      weight: createNumberInputState(120),
+      weight: createNumberInputState(0),
       loadType: 'BARBELL'
     }
   )
@@ -46,6 +46,12 @@ export default function App() {
   })
 
   return (
-    <Calculator {...state} sides={sides} plates={plates} dispatch={dispatch} />
+    <Calculator
+      {...state}
+      sides={sides}
+      rest={rest}
+      plates={plates}
+      dispatch={dispatch}
+    />
   )
 }

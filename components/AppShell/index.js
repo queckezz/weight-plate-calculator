@@ -8,7 +8,7 @@ export function AppShell({ children }) {
   return (
     <>
       <Head>
-        <title>platecalc</title>
+        <title>Weight Plate Calculator</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fff" />
       </Head>

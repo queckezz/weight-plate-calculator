@@ -4,6 +4,7 @@ import {
   Belt,
   Plate,
   Flex,
+  Text,
   PowerRack,
   SpaceChildren,
   SelectType
@@ -14,6 +15,7 @@ export function Calculator({
   barbellWeight,
   loadType,
   sides,
+  rest,
   plates,
   dispatch
 }) {
@@ -90,23 +92,36 @@ export function Calculator({
         )}
       </SpaceChildren>
 
-      <LabeledBlock
-        notice={sides == 2 ? 'per side' : null}
-        textPadding={2}
-        bg="grays.11"
-        boxShadow={3}
-        text="Plates"
-        p={4}
-      >
-        <Flex flexWrap="wrap" m={-1} style={{ overflowY: 'scroll' }}>
-          {Array.from(plates.entries()).map(
-            ([weight, amount], i) =>
-              amount != 0 && (
-                <Plate m={1} key={i} weight={weight} amount={amount} />
-              )
+      {weight.value > 0 && (
+        <LabeledBlock
+          notice={sides == 2 ? 'per side' : null}
+          textPadding={2}
+          bg="grays.11"
+          boxShadow={3}
+          text="Plates"
+          p={4}
+        >
+          {loadType == 'BARBELL' && barbellWeight.value > weight.value && (
+            <Text fontSize={0} fontFamily="primary">
+              The weight you typed in is smaller than the actual barbell weight
+            </Text>
           )}
-        </Flex>
-      </LabeledBlock>
+          <Flex flexWrap="wrap" m={-1} style={{ overflowY: 'scroll' }}>
+            {Array.from(plates.entries()).map(
+              ([weight, amount], i) =>
+                amount != 0 && (
+                  <Plate m={1} key={i} weight={weight} amount={amount} />
+                )
+            )}
+          </Flex>
+
+          {rest > 0 && (
+            <Text mt={2} color="grays.4" fontSize={1} fontFamily="primary">
+              Rest weight: {rest}kg
+            </Text>
+          )}
+        </LabeledBlock>
+      )}
     </Flex>
   )
 }

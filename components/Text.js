@@ -23,6 +23,7 @@ export const Text = styled(Box)(
 Text.displayName = 'Text'
 
 Text.defaultProps = {
+  as: 'p',
   m: 0
 }
 
