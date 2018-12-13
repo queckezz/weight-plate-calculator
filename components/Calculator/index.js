@@ -94,7 +94,7 @@ export function Calculator({
         notice={sides == 2 ? 'per side' : null}
         textPadding={2}
         bg="grays.11"
-        boxShadow={1}
+        boxShadow={3}
         text="Plates"
         p={4}
       >
