@@ -8,8 +8,9 @@ export function AppShell({ children }) {
   return (
     <>
       <Head>
-        <title>Plate Calc</title>
+        <title>platecalc</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#fff" />
       </Head>
       <GlobalStyle />
 

@@ -11,7 +11,7 @@ const createNumberInputState = localeValue => {
   }
 }
 
-function App() {
+export default function App() {
   const [state, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
@@ -49,9 +49,3 @@ function App() {
     <Calculator {...state} sides={sides} plates={plates} dispatch={dispatch} />
   )
 }
-
-export default () => (
-  <AppShell>
-    <App />
-  </AppShell>
-)
