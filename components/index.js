@@ -12,4 +12,4 @@ export * from './SelectType'
 export * from './Plate'
 
 export * from './AppShell'
-export * from './Calculator'
+export * from './App'

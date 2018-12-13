@@ -1,4 +1,4 @@
-import { AppShell, Calculator } from '../components'
+import { App } from '../components'
 import { getPlates } from '../lib/plates'
 import { useReducer } from 'react'
 
@@ -11,7 +11,7 @@ const createNumberInputState = localeValue => {
   }
 }
 
-export default function App() {
+export default () => {
   const [state, dispatch] = useReducer(
     (state, action) => {
       switch (action.type) {
@@ -46,7 +46,7 @@ export default function App() {
   })
 
   return (
-    <Calculator
+    <App
       {...state}
       sides={sides}
       rest={rest}

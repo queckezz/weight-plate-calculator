@@ -10,7 +10,7 @@ import {
   SelectType
 } from '../'
 
-export function Calculator({
+export function App({
   weight,
   barbellWeight,
   loadType,
